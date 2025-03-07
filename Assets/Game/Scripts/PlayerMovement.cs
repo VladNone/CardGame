@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 Direction;
 
     private Rigidbody2D rb;
+    private float Timer = 1;
 
     private void Awake()
     {
@@ -17,9 +18,17 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Wall"))
+        Direction = Vector2.Reflect(Direction, collision.contacts[0].normal);
+        Timer = 1;
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Timer -= Time.deltaTime;
+
+        if (Timer <= 0)
         {
             Direction = Vector2.Reflect(Direction, collision.contacts[0].normal);
+            Timer = 1;
         }
     }
 }

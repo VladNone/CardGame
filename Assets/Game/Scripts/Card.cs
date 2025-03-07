@@ -17,6 +17,10 @@ public class Card : MonoBehaviour
     {
         isMouseExit = true;
     }
+    private void OnMouseEnter()
+    {
+        isMouseExit = false;
+    }
     private void Update()
     {
         if (Input.GetMouseButtonUp(0) && isMouseDown && isMouseExit)
