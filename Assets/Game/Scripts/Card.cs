@@ -3,12 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Card : MonoBehaviour
 {
+    public Vector2 Position;
+
     private bool isMouseDown = false;
     private bool isMouseExit = false;
     private IVisualizer visualizer;
+    private MoveableSmoothDamp move;
     private void Awake()
     {
         TryGetComponent<IVisualizer>(out visualizer);
+        TryGetComponent<MoveableSmoothDamp>(out move);
     }
     private void OnMouseDown()
     {
@@ -41,9 +45,15 @@ public class Card : MonoBehaviour
 
 
         if (visualizer != null) visualizer.Visualize(isMouseDown && isMouseExit);
+        if (move != null) move.targetPosition = Position;
     }
     public virtual void CardUse()
     {
         Debug.Log("this is an abstract class!");
+    }
+    public void Kill()
+    {
+        Hand hand = ServiceLocator.GetService<Hand>();
+        if (hand != null) hand.DeleteCard(gameObject);
     }
 }
