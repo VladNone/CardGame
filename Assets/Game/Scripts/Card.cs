@@ -1,13 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]  
+[RequireComponent(typeof(BoxCollider2D))]
 public class Card : MonoBehaviour
 {
     private bool isMouseDown = false;
     private bool isMouseExit = false;
+    private IVisualizer visualizer;
+    private void Awake()
+    {
+        TryGetComponent<IVisualizer>(out visualizer);
+    }
     private void OnMouseDown()
     {
         isMouseDown = true;
@@ -36,6 +38,9 @@ public class Card : MonoBehaviour
             isMouseExit = false;
             Time.timeScale = 1f;
         }
+
+
+        if (visualizer != null) visualizer.Visualize(isMouseDown && isMouseExit);
     }
     public virtual void CardUse()
     {
