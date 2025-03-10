@@ -4,6 +4,7 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public Vector2 Position;
+    public bool Aimed = false;
 
     private bool isMouseDown = false;
     private bool isMouseExit = false;
@@ -22,6 +23,7 @@ public class Card : MonoBehaviour
     private void OnMouseExit()
     {
         isMouseExit = true;
+        Aimed = false;
     }
     private void OnMouseEnter()
     {
@@ -47,13 +49,17 @@ public class Card : MonoBehaviour
         if (visualizer != null) visualizer.Visualize(isMouseDown && isMouseExit);
         if (move != null) move.targetPosition = Position;
     }
+    private void OnMouseOver()
+    {
+        Aimed = true;
+    }
     public virtual void CardUse()
     {
         Debug.Log("this is an abstract class!");
     }
-    public void Kill()
-    {
-        Hand hand = ServiceLocator.GetService<Hand>();
-        if (hand != null) hand.DeleteCard(gameObject);
-    }
+    //public void Kill()
+    //{
+    //    Hand hand = ServiceLocator.GetService<Hand>();
+    //    if (hand != null) hand.DeleteCard(gameObject);
+    //}
 }

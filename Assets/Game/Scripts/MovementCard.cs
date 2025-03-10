@@ -14,6 +14,6 @@ public class MovementCard : Card
 
         player.Direction = direction;
 
-        Kill();
+        Destroy(gameObject);
     }
 }
