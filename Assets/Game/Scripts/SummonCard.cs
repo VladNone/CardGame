@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnCard : Card
+public class SummonCard : Card
 {
-    public GameObject Spawn;
+    public GameObject Object;
     public override void CardUse()
     {
         PlayerMovement player = ServiceLocator.GetService<PlayerMovement>();
 
-        Instantiate(Spawn, player.transform.position, player.transform.rotation);
+        Instantiate(Object, player.transform.position, player.transform.rotation);
 
         Destroy(gameObject);
     }

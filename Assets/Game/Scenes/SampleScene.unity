@@ -390,7 +390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &240975500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,13 +463,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240975499}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.96, y: 0.13909279, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1158906395}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 542572738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318297353
 GameObject:
@@ -5818,7 +5818,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 240975502}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &542572739
@@ -5845,9 +5846,8 @@ GameObject:
   - component: {fileID: 598152396}
   - component: {fileID: 598152395}
   - component: {fileID: 598152394}
-  - component: {fileID: 598152393}
-  - component: {fileID: 598152392}
   - component: {fileID: 598152397}
+  - component: {fileID: 598152398}
   m_Layer: 0
   m_Name: Card (1)
   m_TagString: Untagged
@@ -5855,32 +5855,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &598152392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598152391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a465e5d0e5dde5419d4ffcc466984c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &598152393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598152391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96aa18de7a1fb2947ae24c6e80863615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Position: {x: 0, y: 0}
-  Aimed: 0
 --- !u!61 &598152394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6009,6 +5983,21 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   smoothTime: 0.15
   maxVelocity: 30
+--- !u!114 &598152398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598152391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f63013dc30776499970e3b4df8a441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Position: {x: 0, y: 0}
+  Aimed: 0
+  Object: {fileID: 2372171481332218633, guid: 9cb291878e2632e479a2b4196eefeb55, type: 3}
 --- !u!1 &635690543
 GameObject:
   m_ObjectHideFlags: 0
@@ -8663,7 +8652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cards:
   - {fileID: 1998299792}
-  - {fileID: 598152393}
+  - {fileID: 598152398}
   - {fileID: 1163216640}
   - {fileID: 1700950025}
   Distance: 3
@@ -8741,4 +8730,3 @@ SceneRoots:
   - {fileID: 1700950029}
   - {fileID: 1048367280}
   - {fileID: 2081961279}
-  - {fileID: 240975502}
