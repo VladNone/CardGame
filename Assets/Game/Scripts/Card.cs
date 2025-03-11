@@ -57,9 +57,4 @@ public class Card : MonoBehaviour
     {
         Debug.Log("this is an abstract class!");
     }
-    //public void Kill()
-    //{
-    //    Hand hand = ServiceLocator.GetService<Hand>();
-    //    if (hand != null) hand.DeleteCard(gameObject);
-    //}
 }
