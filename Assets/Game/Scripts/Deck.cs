@@ -38,6 +38,6 @@ public class Deck : MonoBehaviour
 
         GameObject prefab = Resources.Load<GameObject>(path);
 
-        Cards.Add(prefab);
+        if (prefab != null) Cards.Add(prefab);
     }
 }

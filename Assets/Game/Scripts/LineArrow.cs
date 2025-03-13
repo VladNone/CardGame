@@ -33,7 +33,7 @@ public class LineArrow : MonoBehaviour, IVisualizer
         }
         else
         {
-            line.gameObject.SetActive(false);
+            if (line != null) line.gameObject.SetActive(false);
         }
     }
     private void OnDestroy()
