@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class LineArrow : MonoBehaviour, IVisualizer
 {
+    public Color Color = Color.white;
+    
     private Vector2 position;
     private LineRenderer linePrefab;
     private LineRenderer line;
@@ -12,6 +14,8 @@ public class LineArrow : MonoBehaviour, IVisualizer
         linePrefab = ServiceLocator.GetService<LineRenderer>();
         line = Instantiate(linePrefab, new Vector2(0, 0), new Quaternion(0, 0, 0, 0));
         line.gameObject.SetActive(false);
+        line.startColor = Color;
+        line.endColor = Color;
     }
 
     public void Visualize(bool isShow)

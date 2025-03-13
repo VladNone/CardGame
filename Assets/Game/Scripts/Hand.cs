@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-    public List<Card> Cards;
+    public Card[] Cards = new Card[4];
     public float Distance = 0.3f;
     public float AimedMult = 2f;
 
@@ -15,17 +15,16 @@ public class Hand : MonoBehaviour
     }
     private void Update()
     {
-        if (Cards == null || Cards.Count == 0) return;
+        if (Cards == null) return;
 
-        int centerIndex = Cards.Count / 2;
+        int centerIndex = Cards.Length / 2;
 
-        originDistance = Distance - Cards.Count * 0.1f;
+        originDistance = Distance - Cards.Length * 0.1f;
 
-        for (int i = 0; i < Cards.Count; i++)
+        for (int i = 0; i < Cards.Length; i++)
         {
             if (Cards[i] == null)
             {
-                Cards.Remove(Cards[i]);
                 continue;
             }
             float aimed = 0f;
@@ -35,5 +34,26 @@ public class Hand : MonoBehaviour
 
             Cards[i].Position = transform.position + Vector3.right * offset + Vector3.up * aimed;
         }
+    }
+    public void AddCard(Card card)
+    {
+        for (int i = 0; i < Cards.Length; i++)
+        {
+            if (Cards[i] == null)
+            {
+                Cards[i] = card;
+                break;
+            }
+        }
+    }
+    public int CardsCount()
+    {
+        int count = 0;
+        for (int i = 0; i < Cards.Length; i++)
+        {
+            if (Cards[i] != null) count++;
+        }
+
+        return count;
     }
 }

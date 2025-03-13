@@ -18,8 +18,7 @@ public class DevManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            GameObject card = Instantiate(Card);
-            ServiceLocator.GetService<Hand>().Cards.Add(card.GetComponent<Card>());
+            ServiceLocator.GetService<Deck>().AddToHand();
         }
     }
 }

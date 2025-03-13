@@ -7,6 +7,7 @@ public class GameServiceLoader : MonoBehaviour
     public PlayerMovement Player;
     public LineRenderer Line;
     public Hand hand;
+    public Deck deck;
 
     private void Awake()
     {
@@ -15,5 +16,6 @@ public class GameServiceLoader : MonoBehaviour
         locator.RegisterService(Player);
         locator.RegisterService(Line);
         locator.RegisterService(hand);
+        locator.RegisterService(deck);
     }
 }
