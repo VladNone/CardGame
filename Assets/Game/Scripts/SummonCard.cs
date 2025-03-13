@@ -11,6 +11,6 @@ public class SummonCard : Card
 
         Instantiate(Object, player.transform.position, player.transform.rotation);
 
-        Destroy(gameObject);
+        Kill();
     }
 }

@@ -10,6 +10,10 @@ public class Deck : MonoBehaviour
     private void Start()
     {
         hand = ServiceLocator.GetService<Hand>();
+        AddToHand();
+        AddToHand();
+        AddToHand();
+        AddToHand();
     }
     public void AddToHand()
     {
@@ -22,11 +26,18 @@ public class Deck : MonoBehaviour
         {
             Card card = Instantiate(Cards[randomCard].GetComponent<Card>());
             hand.AddCard(card);
-            //Cards.Remove(Cards[randomCard]);
+            Cards.Remove(Cards[randomCard]);
         }
     }
-    public void ReturnToDeck()
+    public void ReturnToDeck(Card card)
     {
+        string resources = "Prefabs/";
+        string prefabName = card.gameObject.name;
+        prefabName = prefabName.Replace("(Clone)", "");
+        string path = resources + prefabName;
 
+        GameObject prefab = Resources.Load<GameObject>(path);
+
+        Cards.Add(prefab);
     }
 }

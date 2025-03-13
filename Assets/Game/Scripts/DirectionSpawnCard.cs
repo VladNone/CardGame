@@ -20,6 +20,6 @@ public class DirectionSpawnCard : Card
 
         Instantiate(Object, player.transform.position, rotation);
 
-        Destroy(gameObject);
+        Kill();
     }
 }
