@@ -8,6 +8,7 @@ public class GameServiceLoader : MonoBehaviour
     public LineRenderer Line;
     public Hand hand;
     public Deck deck;
+    public ArenaStats arena;
 
     private void Awake()
     {
@@ -17,5 +18,6 @@ public class GameServiceLoader : MonoBehaviour
         locator.RegisterService(Line);
         locator.RegisterService(hand);
         locator.RegisterService(deck);
+        locator.RegisterService(arena);
     }
 }

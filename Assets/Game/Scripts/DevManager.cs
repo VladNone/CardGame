@@ -20,5 +20,9 @@ public class DevManager : MonoBehaviour
         {
             ServiceLocator.GetService<Deck>().AddToHand();
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log(ServiceLocator.GetService<ArenaStats>().NearestEnemy());
+        }
     }
 }

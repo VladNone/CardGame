@@ -471,6 +471,52 @@ Transform:
   - {fileID: 1158906395}
   m_Father: {fileID: 542572738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &284064882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284064884}
+  - component: {fileID: 284064883}
+  m_Layer: 0
+  m_Name: ArenaStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &284064883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284064882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539027d2b8183904581517f292fd26b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: []
+  Bullets: []
+--- !u!4 &284064884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284064882}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0193839, y: -1.9137802, z: -0.023749994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318297353
 GameObject:
   m_ObjectHideFlags: 0
@@ -7815,6 +7861,7 @@ MonoBehaviour:
   Line: {fileID: 2400454978858714574, guid: 19066fec8930d304fa39e48004226020, type: 3}
   hand: {fileID: 2081961280}
   deck: {fileID: 2081961281}
+  arena: {fileID: 284064883}
 --- !u!4 &2051176879
 Transform:
   m_ObjectHideFlags: 0
@@ -7896,10 +7943,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cards:
   - {fileID: 396373695258911179, guid: 52a18143f95a93945be9e0cc122a8803, type: 3}
-  - {fileID: 8492380120435254461, guid: 3b19abb0294aa1642a58448771803cf3, type: 3}
+  - {fileID: 396373695258911179, guid: 52a18143f95a93945be9e0cc122a8803, type: 3}
+  - {fileID: 396373695258911179, guid: 52a18143f95a93945be9e0cc122a8803, type: 3}
   - {fileID: 7610183962642932027, guid: 63ec1ce244b784d48813dd3e1f890a27, type: 3}
-  - {fileID: 396373695258911179, guid: 52a18143f95a93945be9e0cc122a8803, type: 3}
-  - {fileID: 396373695258911179, guid: 52a18143f95a93945be9e0cc122a8803, type: 3}
+  - {fileID: 7610183962642932027, guid: 63ec1ce244b784d48813dd3e1f890a27, type: 3}
+  - {fileID: 2902789957258545243, guid: a7d56b51835f91d4c9e5a1bf5612d6e5, type: 3}
+  - {fileID: 2902789957258545243, guid: a7d56b51835f91d4c9e5a1bf5612d6e5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7912,3 +7961,4 @@ SceneRoots:
   - {fileID: 318297354}
   - {fileID: 1048367280}
   - {fileID: 2081961279}
+  - {fileID: 284064884}
