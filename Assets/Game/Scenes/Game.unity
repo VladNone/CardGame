@@ -500,7 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539027d2b8183904581517f292fd26b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: []
+  Enemy:
+  - {fileID: 1048367278}
   Bullets: []
 --- !u!4 &284064884
 Transform:
