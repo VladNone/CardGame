@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class DevManager : MonoBehaviour
 {
-    public GameObject Card;
     private void Start()
     {
         #if !UNITY_EDITOR

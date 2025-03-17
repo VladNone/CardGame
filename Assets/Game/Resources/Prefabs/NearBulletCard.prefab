@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e269b8b29a12e4daa62c7e8e89373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DragObject: {fileID: 7729061737858557518}
+  DragObject: {fileID: 5445660771285890701}
 --- !u!1 &7729061737858557518
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,8 +356,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4363985053364234784}
   - component: {fileID: 3204148353799902501}
+  - component: {fileID: 5445660771285890701}
   m_Layer: 0
-  m_Name: NearBulletCard
+  m_Name: Drag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,3 +432,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5445660771285890701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729061737858557518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70efdf12f7851bf46b39665e9c9c4986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0}
+  smoothTime: 0.01
+  maxVelocity: 300
