@@ -36,8 +36,19 @@ public class ArenaStats : MonoBehaviour
             float distance = Vector2.Distance(enemy.transform.position, playerPos);
             float nearDistance = Vector2.Distance(nearEnemy.transform.position, playerPos);
             
-            if (distance > nearDistance) nearEnemy = enemy;
+            if (distance < nearDistance) nearEnemy = enemy;
         }
         return nearEnemy;
+    }
+    public void AddEnemy(GameObject newEnemy)
+    {
+        foreach (var enemy in Enemy)
+        {
+            if (newEnemy == enemy)
+            {
+                return;
+            }
+        }
+        Enemy.Add(newEnemy);
     }
 }

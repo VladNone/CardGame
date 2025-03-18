@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private PlayerMovement player;
     private void Start()
     {
+        ServiceLocator.GetService<ArenaStats>().AddEnemy(gameObject);
         player = ServiceLocator.GetService<PlayerMovement>();
     }
     private void Update()
