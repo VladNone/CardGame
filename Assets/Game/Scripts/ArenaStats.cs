@@ -18,6 +18,31 @@ public class ArenaStats : MonoBehaviour
         if (Enemy == null || Enemy.Count == 0) return null;
         
         GameObject nearEnemy = null;
+        for (int i = 0; i < Enemy.Count; i++)
+        {
+            if (Enemy[i] == null)
+            {
+                Enemy.Remove(Enemy[i]);
+                i--;
+                continue;
+            }
+
+            if (nearEnemy == null)
+            {
+                nearEnemy = Enemy[i];
+                continue;
+            }
+
+            Vector2 playerPos = player.transform.position;
+            float distance = Vector2.Distance(Enemy[i].transform.position, playerPos);
+            float nearDistance = Vector2.Distance(nearEnemy.transform.position, playerPos);
+            
+            if (distance < nearDistance) nearEnemy = Enemy[i];
+        }
+        return nearEnemy;
+    }
+    public void AddEnemy(GameObject newEnemy)
+    {
         foreach (var enemy in Enemy)
         {
             if (enemy == null)
@@ -26,24 +51,6 @@ public class ArenaStats : MonoBehaviour
                 continue;
             }
 
-            if (nearEnemy == null)
-            {
-                nearEnemy = enemy;
-                continue;
-            }
-
-            Vector2 playerPos = player.transform.position;
-            float distance = Vector2.Distance(enemy.transform.position, playerPos);
-            float nearDistance = Vector2.Distance(nearEnemy.transform.position, playerPos);
-            
-            if (distance < nearDistance) nearEnemy = enemy;
-        }
-        return nearEnemy;
-    }
-    public void AddEnemy(GameObject newEnemy)
-    {
-        foreach (var enemy in Enemy)
-        {
             if (newEnemy == enemy)
             {
                 return;
