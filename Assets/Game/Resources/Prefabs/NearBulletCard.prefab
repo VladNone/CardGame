@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 4363985053364234784}
   - component: {fileID: 3204148353799902501}
   - component: {fileID: 5445660771285890701}
+  - component: {fileID: 232850644683689605}
   m_Layer: 0
   m_Name: Drag
   m_TagString: Untagged
@@ -447,3 +448,17 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   smoothTime: 0.01
   maxVelocity: 300
+--- !u!114 &232850644683689605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729061737858557518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef39beaf89fb6d44abac5fb4f028b056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsScaleKill: 0
+  Speed: 40

@@ -43,15 +43,15 @@ public class ArenaStats : MonoBehaviour
     }
     public void AddEnemy(GameObject newEnemy)
     {
-        foreach (var enemy in Enemy)
+        for (int i = 0; i < Enemy.Count; i++)
         {
-            if (enemy == null)
+            if (Enemy[i] == null)
             {
-                Enemy.Remove(enemy);
+                Enemy.Remove(Enemy[i]);
                 continue;
             }
 
-            if (newEnemy == enemy)
+            if (newEnemy == Enemy[i])
             {
                 return;
             }

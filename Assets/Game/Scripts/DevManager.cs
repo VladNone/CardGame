@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DevManager : MonoBehaviour
 {
+    public GameObject Enemy;
     private void Start()
     {
         #if !UNITY_EDITOR
@@ -21,7 +22,9 @@ public class DevManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log(ServiceLocator.GetService<ArenaStats>().NearestEnemy());
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Instantiate(Enemy, mousePos, transform.rotation);
         }
     }
 }

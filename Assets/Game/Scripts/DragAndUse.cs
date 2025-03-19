@@ -7,6 +7,7 @@ public class DragAndUse : MonoBehaviour, IVisualizer
     private Vector2 offset;
     private void Start()
     {
+        DragObject.transform.SetParent(null);
         DragObject.gameObject.SetActive(false);
     }
     public void Visualize(bool isShow)
@@ -32,5 +33,10 @@ public class DragAndUse : MonoBehaviour, IVisualizer
         {
             DragObject.gameObject.SetActive(false);
         }
+    }
+    private void OnDestroy()
+    {
+        DragObject.gameObject.SetActive(true);
+        if (DragObject != null) DragObject.GetComponent<ScaleKill>().IsScaleKill = true;
     }
 }
