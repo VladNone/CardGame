@@ -9,6 +9,7 @@ public class GameServiceLoader : MonoBehaviour
     public Hand hand;
     public Deck deck;
     public ArenaStats arena;
+    public SwapCard swapCards;
 
     private void Awake()
     {
@@ -19,5 +20,6 @@ public class GameServiceLoader : MonoBehaviour
         locator.RegisterService(hand);
         locator.RegisterService(deck);
         locator.RegisterService(arena);
+        locator.RegisterService(swapCards);
     }
 }

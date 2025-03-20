@@ -7,13 +7,15 @@ public class Deck : MonoBehaviour
     public List<GameObject> Cards;
 
     private Hand hand;
+    private SwapCard swapCards;
     private void Start()
     {
         hand = ServiceLocator.GetService<Hand>();
-        AddToHand();
-        AddToHand();
-        AddToHand();
-        AddToHand();
+        swapCards = ServiceLocator.GetService<SwapCard>();
+        //AddToHand();
+        //AddToHand();
+        //AddToHand();
+        //AddToHand();
     }
     public void AddToHand()
     {
@@ -26,6 +28,20 @@ public class Deck : MonoBehaviour
         {
             Card card = Instantiate(Cards[randomCard].GetComponent<Card>());
             hand.AddCard(card);
+            Cards.Remove(Cards[randomCard]);
+        }
+    }
+    public void AddToOwnCards()
+    {
+        if (Cards == null || Cards.Count == 0) return;
+
+        int cardsCount = Cards.Count;
+        int randomCard = Random.Range(0, cardsCount);
+
+        Card card = Instantiate(Cards[randomCard].GetComponent<Card>());
+        if (swapCards.OwnCards.Count < swapCards.OwnCardPlaces.Length)
+        {
+            swapCards.AddOwnCard(card);
             Cards.Remove(Cards[randomCard]);
         }
     }

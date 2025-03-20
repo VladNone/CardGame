@@ -36,7 +36,10 @@ public class DragAndUse : MonoBehaviour, IVisualizer
     }
     private void OnDestroy()
     {
-        DragObject.gameObject.SetActive(true);
-        if (DragObject != null) DragObject.GetComponent<ScaleKill>().IsScaleKill = true;
+        if (DragObject != null)
+        {
+            DragObject.gameObject.SetActive(true);
+            DragObject.GetComponent<ScaleKill>().IsScaleKill = true;
+        }
     }
 }

@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         Direction = Vector2.Reflect(Direction, collision.contacts[0].normal);
         Timer = 1;
 
-        deck.AddToHand();
+        //deck.AddToHand();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {

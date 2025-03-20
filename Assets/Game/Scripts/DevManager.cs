@@ -26,5 +26,9 @@ public class DevManager : MonoBehaviour
 
             Instantiate(Enemy, mousePos, transform.rotation);
         }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            ServiceLocator.GetService<SwapCard>().RerollSwapCards();
+        }
     }
 }
