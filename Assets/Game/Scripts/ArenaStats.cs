@@ -6,6 +6,7 @@ public class ArenaStats : MonoBehaviour
 {
     public List<GameObject> Enemy;
     public List<GameObject> Bullets;
+    public bool MouseLock = false;
 
     private PlayerMovement player;
 
@@ -57,5 +58,20 @@ public class ArenaStats : MonoBehaviour
             }
         }
         Enemy.Add(newEnemy);
+    }
+    public int CountEnemy()
+    {
+        int enemyCount = 0;
+        for (int i = 0; i < Enemy.Count; i++)
+        {
+            if (Enemy[i] == null)
+            {
+                Enemy.Remove(Enemy[i]);
+                i--;
+                continue;
+            }
+            enemyCount++;
+        }
+        return enemyCount;
     }
 }

@@ -12,15 +12,19 @@ public class SwapCard : MonoBehaviour
 
     private Deck deck;
     private Hand hand;
+    private ArenaStats stats;
+    private CoreGame game;
     private bool isNewSelected = false;
     private bool isOwnSelected = false;
-    private void Start()
+    private void Awake()
     {
         deck = ServiceLocator.GetService<Deck>();
         hand = ServiceLocator.GetService<Hand>();
+        stats = ServiceLocator.GetService<ArenaStats>();
+        game = ServiceLocator.GetService<CoreGame>();
     }
     public void RerollSwapCards()
-    {
+    {   
         isNewSelected = false;
         isOwnSelected = false;
 
@@ -103,6 +107,7 @@ public class SwapCard : MonoBehaviour
     }
     private IEnumerator Finish()
     {
+        stats.MouseLock = true;
         for (int i = NewCards.Count - 1; i >= 0; i--)
         {
             if (!NewCards[i].IsReverted)
@@ -138,5 +143,9 @@ public class SwapCard : MonoBehaviour
             OwnCards.RemoveAt(i);
             yield return null;
         }
+        stats.MouseLock = false;
+
+        yield return new WaitForSeconds(0.5f);
+        game.SwitchGameplay();
     }
 }

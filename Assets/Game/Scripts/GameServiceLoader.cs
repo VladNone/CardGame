@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-9999)]
 public class GameServiceLoader : MonoBehaviour
 {
     public PlayerMovement Player;
@@ -10,6 +9,7 @@ public class GameServiceLoader : MonoBehaviour
     public Deck deck;
     public ArenaStats arena;
     public SwapCard swapCards;
+    public CoreGame game;
 
     private void Awake()
     {
@@ -21,5 +21,6 @@ public class GameServiceLoader : MonoBehaviour
         locator.RegisterService(deck);
         locator.RegisterService(arena);
         locator.RegisterService(swapCards);
+        locator.RegisterService(game);  
     }
 }

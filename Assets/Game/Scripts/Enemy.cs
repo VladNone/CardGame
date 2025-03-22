@@ -54,4 +54,8 @@ public class Enemy : MonoBehaviour
         damToStun = DamageToStun;
         stun = false;
     }
+    private void OnDestroy()
+    {
+        if (ServiceLocator.GetService<CoreGame>() != null) ServiceLocator.GetService<CoreGame>().Invoke("CheckEnemy", 0.1f);
+    }
 }

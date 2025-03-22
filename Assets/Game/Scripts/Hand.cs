@@ -56,4 +56,12 @@ public class Hand : MonoBehaviour
 
         return count;
     }
+    public void KillAllCards()
+    {
+        for (int i = Cards.Length - 1; i >= 0; i--)
+        {
+            if (Cards[i] != null) Cards[i].Kill();
+            Cards[i] = null;
+        }
+    }
 }

@@ -8,14 +8,10 @@ public class Deck : MonoBehaviour
 
     private Hand hand;
     private SwapCard swapCards;
-    private void Start()
+    private void Awake()
     {
         hand = ServiceLocator.GetService<Hand>();
         swapCards = ServiceLocator.GetService<SwapCard>();
-        //AddToHand();
-        //AddToHand();
-        //AddToHand();
-        //AddToHand();
     }
     public void AddToHand()
     {

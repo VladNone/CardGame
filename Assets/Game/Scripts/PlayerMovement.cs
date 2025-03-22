@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float Timer = 1;
     private Deck deck;
+    private CoreGame game;
 
     private void Awake()
     {
@@ -16,6 +17,12 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         deck = ServiceLocator.GetService<Deck>();
+        game = ServiceLocator.GetService<CoreGame>();
+
+        deck.AddToHand();
+        deck.AddToHand();
+        deck.AddToHand();
+        deck.AddToHand();
     }
     private void Update()
     {
@@ -26,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         Direction = Vector2.Reflect(Direction, collision.contacts[0].normal);
         Timer = 1;
 
-        //deck.AddToHand();
+        if (game.IsGameplay) deck.AddToHand();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
