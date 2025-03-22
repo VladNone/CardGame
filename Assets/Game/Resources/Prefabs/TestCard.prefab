@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1415517125565091714}
   - component: {fileID: 5191805591450798763}
   - component: {fileID: 2428956582506258063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0}
   Aimed: 0
+  IsBuying: 0
+  IsReverted: 1
 --- !u!114 &5191805591450798763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5595954472773789805}
   - component: {fileID: 1231780139219227483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

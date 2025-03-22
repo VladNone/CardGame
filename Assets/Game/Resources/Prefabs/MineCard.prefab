@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4894277275800252922}
   - component: {fileID: 687743154552032549}
   - component: {fileID: 5407241411214131472}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MineCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,6 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0}
   Aimed: 0
+  IsBuying: 0
+  IsReverted: 1
   Object: {fileID: 2372171481332218633, guid: 9cb291878e2632e479a2b4196eefeb55, type: 3}
 --- !u!1 &8736222161934094114
 GameObject:
@@ -173,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604394284248520379}
   - component: {fileID: 3105461742803310686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

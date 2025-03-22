@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5894070691363418991}
   - component: {fileID: 6339156173778768241}
   - component: {fileID: 2854153149575407677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DirBulletCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0}
   Aimed: 0
+  IsBuying: 0
+  IsReverted: 1
   Object: {fileID: 8792615216618781029, guid: d9de5fb09ea337f429596cfb65367ec2, type: 3}
 --- !u!1 &8737544842568793533
 GameObject:
@@ -187,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6832302521373933014}
   - component: {fileID: 5061211942538093085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

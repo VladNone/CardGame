@@ -25,7 +25,8 @@ public class LineArrow : MonoBehaviour, IVisualizer
             Vector2 playerPosition = player.transform.position;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = mousePosition - playerPosition;
-            RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction);
+            int layerMask = ~LayerMask.GetMask("IgnoreCustom");
+            RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, 999, layerMask);
 
             line.gameObject.SetActive(true);
             line.SetPosition(0, playerPosition);
