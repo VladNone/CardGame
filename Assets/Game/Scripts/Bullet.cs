@@ -5,7 +5,10 @@ public class Bullet : MonoBehaviour
     public float Speed = 20f;
     public float Damage = 1f;
     public float Force = 50f;
-
+    private void Awake()
+    {
+        ServiceLocator.GetService<ArenaStats>().AddBullet(gameObject);
+    }
     private void Update()
     {
         Move();

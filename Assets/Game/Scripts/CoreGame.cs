@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class CoreGame : MonoBehaviour
@@ -25,6 +24,7 @@ public class CoreGame : MonoBehaviour
         if (arena.CountEnemy() <= 0 && IsGameplay)
         {
             hand.KillAllCards();
+            arena.KillAllBullets();
             IsGameplay = false;
             swap.Invoke("RerollSwapCards", 1f);
         }
@@ -46,6 +46,6 @@ public class CoreGame : MonoBehaviour
             Vector2 spawnPoint = new Vector2(Random.Range(-7f, 7f), Random.Range(-3f, 3f));
             Instantiate(Enemy, spawnPoint, transform.rotation);
         }
-        enemyNextCount++;
+        if (Random.Range(0f, 1f) > 0.25f) enemyNextCount++;
     }
 }

@@ -74,4 +74,16 @@ public class ArenaStats : MonoBehaviour
         }
         return enemyCount;
     }
+    public void AddBullet(GameObject newBullet)
+    {
+        Bullets.Add(newBullet);
+    }
+    public void KillAllBullets()
+    {
+        for (int i = 0; i < Bullets.Count; i++)
+        {
+            if (Bullets[i] != null) Destroy(Bullets[i]);
+        }
+        Bullets.Clear();
+    }
 }
