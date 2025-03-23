@@ -1,9 +1,10 @@
-using System.Net.Security;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Card : MonoBehaviour
 {
+    public float DissolveSmooth = 3f;
     public Vector2 Position;
     public bool Aimed = false;
     public bool IsBuying = false;
@@ -14,14 +15,19 @@ public class Card : MonoBehaviour
     private IVisualizer visualizer;
     private MoveableSmoothDamp move;
     private ArenaStats stats;
+    private SpriteRenderer sprite;
     private void Awake()
     {
         TryGetComponent<IVisualizer>(out visualizer);
         TryGetComponent<MoveableSmoothDamp>(out move);
+        stats = ServiceLocator.GetService<ArenaStats>();
     }
     private void Start()
     {
-        stats = ServiceLocator.GetService<ArenaStats>();
+        sprite = GetComponent<SpriteRenderer>();
+
+        sprite.material = new Material(sprite.material);
+        sprite.material.color = sprite.color;
     }
     private void OnMouseDown()
     {
@@ -86,6 +92,17 @@ public class Card : MonoBehaviour
     public void Kill()
     {
         if (IsReverted) ServiceLocator.GetService<Deck>().ReturnToDeck(this);
+        CreateView(true);
         Destroy(gameObject);
+    }
+    public void CreateView(bool dissolve)
+    {
+        GameObject view = new GameObject();
+        view.transform.position = transform.position;
+        view.name = "CardView";
+        SpriteRenderer viewSprite = view.AddComponent<SpriteRenderer>();
+        viewSprite.sprite = sprite.sprite;
+        viewSprite.material = sprite.material;
+        if (dissolve) view.AddComponent<DissolveKill>();
     }
 }
