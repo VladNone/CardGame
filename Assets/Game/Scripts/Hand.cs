@@ -63,5 +63,6 @@ public class Hand : MonoBehaviour
             if (Cards[i] != null) Cards[i].Kill();
             Cards[i] = null;
         }
+        Time.timeScale = 1f;
     }
 }
