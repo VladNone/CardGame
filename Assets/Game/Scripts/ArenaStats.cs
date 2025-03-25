@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class ArenaStats : MonoBehaviour
     public List<GameObject> Enemy;
     public List<GameObject> Bullets;
     public bool MouseLock = false;
+    public GameObject Text;
 
     private PlayerMovement player;
 

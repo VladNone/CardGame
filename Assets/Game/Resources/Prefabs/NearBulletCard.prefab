@@ -179,8 +179,8 @@ GameObject:
   - component: {fileID: 8100309052933119518}
   - component: {fileID: 8652537137242642087}
   - component: {fileID: 5139316559502501556}
-  - component: {fileID: 1908562226761900797}
   - component: {fileID: 7383575299520047265}
+  - component: {fileID: 1908562226761900797}
   - component: {fileID: 4001847960391577609}
   m_Layer: 7
   m_Name: NearBulletCard
@@ -303,21 +303,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
---- !u!114 &1908562226761900797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902789957258545243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70efdf12f7851bf46b39665e9c9c4986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0}
-  smoothTime: 0.15
-  maxVelocity: 30
 --- !u!114 &7383575299520047265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +320,23 @@ MonoBehaviour:
   Aimed: 0
   IsBuying: 0
   IsReverted: 1
+  Description: Fires bullet at <color=red><link=wave>NEAREST ENEMY</link></color>
   Object: {fileID: 8311732891584392439, guid: f6df7665aa1510d4bb6a68c79092bf21, type: 3}
+--- !u!114 &1908562226761900797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902789957258545243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70efdf12f7851bf46b39665e9c9c4986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0}
+  smoothTime: 0.15
+  maxVelocity: 30
 --- !u!114 &4001847960391577609
 MonoBehaviour:
   m_ObjectHideFlags: 0

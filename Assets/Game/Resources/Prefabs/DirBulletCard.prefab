@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3789790439047175399}
   - component: {fileID: 3704445674598324185}
   - component: {fileID: 4076908426854880844}
+  - component: {fileID: 2854153149575407677}
   - component: {fileID: 5894070691363418991}
   - component: {fileID: 6339156173778768241}
-  - component: {fileID: 2854153149575407677}
   m_Layer: 7
   m_Name: DirBulletCard
   m_TagString: Untagged
@@ -134,6 +134,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &2854153149575407677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610183962642932027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea09d08b808ba5c47a8ccc5f772cd8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DissolveSmooth: 2.5
+  Position: {x: 0, y: 0}
+  Aimed: 0
+  IsBuying: 0
+  IsReverted: 1
+  Description: Fires bullet toward mouse
+  Object: {fileID: 8792615216618781029, guid: d9de5fb09ea337f429596cfb65367ec2, type: 3}
 --- !u!114 &5894070691363418991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,24 +181,6 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   smoothTime: 0.15
   maxVelocity: 30
---- !u!114 &2854153149575407677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7610183962642932027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea09d08b808ba5c47a8ccc5f772cd8d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DissolveSmooth: 2.5
-  Position: {x: 0, y: 0}
-  Aimed: 0
-  IsBuying: 0
-  IsReverted: 1
-  Object: {fileID: 8792615216618781029, guid: d9de5fb09ea337f429596cfb65367ec2, type: 3}
 --- !u!1 &8737544842568793533
 GameObject:
   m_ObjectHideFlags: 0

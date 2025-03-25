@@ -151,6 +151,8 @@ MonoBehaviour:
   Aimed: 0
   IsBuying: 0
   IsReverted: 1
+  Description: Changes <color=red><link=wave>PLAYERS DIRECTION</link=wave></color>
+    toward mouse
 --- !u!114 &5191805591450798763
 MonoBehaviour:
   m_ObjectHideFlags: 0

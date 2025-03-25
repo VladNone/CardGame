@@ -211,8 +211,8 @@ GameObject:
   - component: {fileID: 68590532882729278}
   - component: {fileID: 5324114426757909585}
   - component: {fileID: 4894277275800252922}
-  - component: {fileID: 687743154552032549}
   - component: {fileID: 5407241411214131472}
+  - component: {fileID: 687743154552032549}
   - component: {fileID: 7834599913309770466}
   m_Layer: 7
   m_Name: MineCard
@@ -335,21 +335,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
---- !u!114 &687743154552032549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8492380120435254461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70efdf12f7851bf46b39665e9c9c4986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0}
-  smoothTime: 0.15
-  maxVelocity: 30
 --- !u!114 &5407241411214131472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +352,23 @@ MonoBehaviour:
   Aimed: 0
   IsBuying: 0
   IsReverted: 1
+  Description: Place mine on player location
   Object: {fileID: 2372171481332218633, guid: 9cb291878e2632e479a2b4196eefeb55, type: 3}
+--- !u!114 &687743154552032549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492380120435254461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70efdf12f7851bf46b39665e9c9c4986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0}
+  smoothTime: 0.15
+  maxVelocity: 30
 --- !u!114 &7834599913309770466
 MonoBehaviour:
   m_ObjectHideFlags: 0
