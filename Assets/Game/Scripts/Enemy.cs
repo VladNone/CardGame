@@ -13,13 +13,12 @@ public class Enemy : MonoBehaviour
     private bool stun = false;
     private int damToStun;
     private bool isDead = false;
+    private AudioSource source;
     private void Awake()
     {
         damToStun = DamageToStun;
         rb = GetComponent<Rigidbody2D>();
-    }
-    private void Start()
-    {
+        source = GetComponent<AudioSource>();
         ServiceLocator.GetService<ArenaStats>().AddEnemy(gameObject);
         player = ServiceLocator.GetService<PlayerMovement>();
     }
@@ -36,6 +35,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Hp -= damage;
+        source.pitch = Random.Range(0.8f, 1.2f);
+        source.Play();
         damToStun -= 1;
         if (damToStun <= 0)
         {

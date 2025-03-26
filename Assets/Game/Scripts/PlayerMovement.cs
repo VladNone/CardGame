@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     private float Timer = 1;
     private Deck deck;
     private CoreGame game;
+    private AudioSource source;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -31,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Direction = Vector2.Reflect(Direction, collision.contacts[0].normal);
+        source.pitch = Random.Range(0.8f, 1.2f);
+        source.Play();
         Timer = 1;
 
         if (game.IsGameplay) deck.AddToHand();

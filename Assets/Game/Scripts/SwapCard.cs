@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class SwapCard : MonoBehaviour
@@ -16,15 +17,18 @@ public class SwapCard : MonoBehaviour
     private CoreGame game;
     private bool isNewSelected = false;
     private bool isOwnSelected = false;
+    private AudioSource source;
     private void Awake()
     {
         deck = ServiceLocator.GetService<Deck>();
         hand = ServiceLocator.GetService<Hand>();
         stats = ServiceLocator.GetService<ArenaStats>();
         game = ServiceLocator.GetService<CoreGame>();
+        source = GetComponent<AudioSource>();
     }
     public void RerollSwapCards()
-    {   
+    {
+        source.Play();
         isNewSelected = false;
         isOwnSelected = false;
 
