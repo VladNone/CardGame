@@ -1,4 +1,3 @@
-using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -21,11 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         deck = ServiceLocator.GetService<Deck>();
         game = ServiceLocator.GetService<CoreGame>();
-
-        deck.AddToHand();
-        deck.AddToHand();
-        deck.AddToHand();
-        deck.AddToHand();
     }
     private void Update()
     {

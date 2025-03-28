@@ -7331,7 +7331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &935503911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7344,7 +7344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ff3b837f8000242afb97c43710a76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 5870261155135092021, guid: c3b8f8e3ee4074140ae5fc14fff5113f, type: 3}
+  Spawner: {fileID: 5870261155135092021, guid: c3b8f8e3ee4074140ae5fc14fff5113f, type: 3}
+  MaxEnemyBeforeWaves: 4
 --- !u!4 &935503912
 Transform:
   m_ObjectHideFlags: 0

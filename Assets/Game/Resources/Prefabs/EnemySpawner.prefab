@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5870261155135092021}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.54, y: 0.06, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
@@ -185,3 +185,5 @@ MonoBehaviour:
   Enemy: {fileID: 5598179855424691278, guid: b8ca12fd3d62a454f8538d2e3a6d70c8, type: 3}
   LifeTimeMin: 1
   LifeTimeMax: 2
+  NextWave: 0
+  Color: {r: 0, g: 0.4884386, b: 1, a: 0.5019608}

@@ -28,6 +28,9 @@ public class ArenaStats : MonoBehaviour
                 continue;
             }
 
+            EnemySpawner spawner = Enemy[i].GetComponent<EnemySpawner>();
+            if (spawner != null) continue;
+
             if (nearEnemy == null)
             {
                 nearEnemy = Enemy[i];
@@ -73,6 +76,22 @@ public class ArenaStats : MonoBehaviour
             enemyCount++;
         }
         return enemyCount;
+    }
+    public bool OnlyStaySpawners()
+    {
+        for (int i = 0; i < Enemy.Count; i++)
+        {
+            if (Enemy[i] == null)
+            {
+                Enemy.Remove(Enemy[i]);
+                i--;
+                continue;
+            }
+
+            EnemySpawner spawner = Enemy[i].GetComponent<EnemySpawner>();
+            if (spawner == null) return false;
+        }
+        return true;
     }
     public void AddBullet(GameObject newBullet)
     {

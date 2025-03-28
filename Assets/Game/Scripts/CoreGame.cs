@@ -1,9 +1,11 @@
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class CoreGame : MonoBehaviour
 {
     public bool IsGameplay { get; private set; } = true;
-    public GameObject Enemy;
+    public GameObject Spawner;
+    public int MaxEnemyBeforeWaves = 3;
 
     private SwapCard swap;
     private ArenaStats arena;
@@ -28,6 +30,14 @@ public class CoreGame : MonoBehaviour
             IsGameplay = false;
             swap.Invoke("RerollSwapCards", 1f);
         }
+
+        if (arena.OnlyStaySpawners() && IsGameplay)
+        {
+            foreach (GameObject spawner in arena.Enemy)
+            {
+                spawner.GetComponent<EnemySpawner>().Init();
+            }
+        }
     }
     public void SwitchGameplay()
     {
@@ -41,10 +51,13 @@ public class CoreGame : MonoBehaviour
     }
     public void SpawnEnemy()
     {
+        int currentEnemyCount = 0;
         for (int i = 0; i < enemyNextCount; i++)
         {
             Vector2 spawnPoint = new Vector2(Random.Range(-7f, 7f), Random.Range(-3f, 3f));
-            Instantiate(Enemy, spawnPoint, transform.rotation);
+            currentEnemyCount++;
+            GameObject spawner = Instantiate(Spawner, spawnPoint, transform.rotation);
+            if (currentEnemyCount > MaxEnemyBeforeWaves) spawner.GetComponent<EnemySpawner>().NextWave = true;
         }
         if (Random.Range(0f, 1f) > 0.25f) enemyNextCount++;
     }
