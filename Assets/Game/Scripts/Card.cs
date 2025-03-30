@@ -70,6 +70,8 @@ public class Card : MonoBehaviour
     }
     private void Update()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, -3f);
+        
         if (Input.GetMouseButtonUp(0) && isMouseDown && isMouseExit && !IsBuying && !stats.MouseLock)
         {
             CardUse();

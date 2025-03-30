@@ -57,7 +57,7 @@ public class CoreGame : MonoBehaviour
             Vector2 spawnPoint = new Vector2(Random.Range(-7f, 7f), Random.Range(-3f, 3f));
             currentEnemyCount++;
             GameObject spawner = Instantiate(Spawner, spawnPoint, transform.rotation);
-            if (currentEnemyCount > MaxEnemyBeforeWaves) spawner.GetComponent<EnemySpawner>().NextWave = true;
+            if (enemyNextCount > MaxEnemyBeforeWaves && currentEnemyCount > enemyNextCount / 2) spawner.GetComponent<EnemySpawner>().NextWave = true;
         }
         if (Random.Range(0f, 1f) > 0.25f) enemyNextCount++;
     }

@@ -80,9 +80,11 @@ public class SwapCard : MonoBehaviour
         foreach (Card _card in NewCards)
         {
             _card.IsReverted = false;
+            _card.Aimed = false;
             if (_card.gameObject == card.gameObject)
             {
                 _card.IsReverted = true;
+                _card.Aimed = true;
                 isNewSelected = true;
             }
         }
@@ -97,9 +99,11 @@ public class SwapCard : MonoBehaviour
         foreach (Card _card in OwnCards)
         {
             _card.IsReverted = true;
+            _card.Aimed = false;
             if (_card.gameObject == card.gameObject)
             {
                 _card.IsReverted = false;
+                _card.Aimed = true;
                 isOwnSelected = true;
             }
         }

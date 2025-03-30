@@ -7,7 +7,8 @@ public class DissolveKill : MonoBehaviour
     private SpriteRenderer sprite;
     private void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();    
+        sprite = GetComponent<SpriteRenderer>();  
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
     private void Update()
     {
