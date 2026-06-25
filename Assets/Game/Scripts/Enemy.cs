@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
     public float StunTime = 1f;
     public GameObject particle;
 
-    private PlayerMovement player;
-    private Rigidbody2D rb;
+    protected PlayerMovement player;
+    protected Rigidbody2D rb;
     private bool stun = false;
     private int damToStun;
     private bool isDead = false;

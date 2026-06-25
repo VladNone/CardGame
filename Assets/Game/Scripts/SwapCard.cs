@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class SwapCard : MonoBehaviour
 {
+
     public List<Card> NewCards;
     public List<Card> OwnCards;
     public List<GameObject> OtherCards;

@@ -352,7 +352,7 @@ MonoBehaviour:
   Aimed: 0
   IsBuying: 0
   IsReverted: 1
-  Description: Place mine on player location
+  Description: Place <link=gradient>MINE</link> on player location
   Object: {fileID: 2372171481332218633, guid: 9cb291878e2632e479a2b4196eefeb55, type: 3}
 --- !u!114 &687743154552032549
 MonoBehaviour:

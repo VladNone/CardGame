@@ -7,6 +7,7 @@ public class CoreGame : MonoBehaviour
     public GameObject Spawner;
     public int MaxEnemyBeforeWaves = 3;
 
+    private PlayerMovement player;
     private SwapCard swap;
     private ArenaStats arena;
     private Hand hand;
@@ -28,7 +29,7 @@ public class CoreGame : MonoBehaviour
             hand.KillAllCards();
             arena.KillAllBullets();
             IsGameplay = false;
-            swap.Invoke("RerollSwapCards", 1f);
+            swap.Invoke("RerollSwapCards", 1f);  // Поменять на метод который будет спавнить коробку с рандом ивентами
         }
 
         if (arena.OnlyStaySpawners() && IsGameplay)

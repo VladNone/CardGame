@@ -35,7 +35,7 @@ public class Card : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        text.color = new Color(255, 255, 255, 0);
+        DrawText(false);
         if (stats.MouseLock) return;
         if (IsBuying)
         {
@@ -49,8 +49,7 @@ public class Card : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        text.color = new Color(255, 255, 255, 0);
-        text.GetComponent<TextEffect>().Refresh();
+        DrawText(false);
         if (stats.MouseLock) return;
         if (IsBuying) return;
         isMouseExit = true;
@@ -61,9 +60,7 @@ public class Card : MonoBehaviour
         if (stats.MouseLock) return;
         if (!isMouseDown)
         {
-            text.color = new Color(255, 255, 255, 255);
-            text.text = Description;
-            text.GetComponent<TextEffect>().Refresh();
+            DrawText(true);
         }
         if (IsBuying) return;
         isMouseExit = false;
@@ -78,14 +75,14 @@ public class Card : MonoBehaviour
             isMouseDown = false;
             isMouseExit = false;
             Time.timeScale = 1f;
-            text.color = new Color(255, 255, 255, 0);
+            DrawText(false);
         }
         else if (Input.GetMouseButtonUp(0) && !IsBuying && !stats.MouseLock)
         {
             isMouseDown = false;
             isMouseExit = false;
             Time.timeScale = 1f;
-            text.color = new Color(255, 255, 255, 0);
+            DrawText(false);
         }
 
 
@@ -109,10 +106,10 @@ public class Card : MonoBehaviour
     public void Kill()
     {
         if (IsReverted) ServiceLocator.GetService<Deck>().ReturnToDeck(this);
-        CreateView(true);
+        CreateView();
         Destroy(gameObject);
     }
-    public void CreateView(bool dissolve)
+    public void CreateView()
     {
         GameObject view = new GameObject();
         view.transform.position = transform.position;
@@ -120,6 +117,33 @@ public class Card : MonoBehaviour
         SpriteRenderer viewSprite = view.AddComponent<SpriteRenderer>();
         viewSprite.sprite = sprite.sprite;
         viewSprite.material = sprite.material;
-        if (dissolve) view.AddComponent<DissolveKill>();
+        if (!IsBuying || !IsReverted)
+        {
+            view.AddComponent<DissolveKill>();
+        }
+        else
+        {
+            MoveableSmoothDamp move = view.AddComponent<MoveableSmoothDamp>();
+            move.targetPosition = new Vector3(transform.position.x, -10, transform.position.z);
+
+            ScaleKill kill = view.AddComponent<ScaleKill>();
+            kill.Speed = 10f;
+            kill.IsScaleKill = true;
+        }
+    }
+    public void DrawText(bool enable)
+    {
+        if (enable)
+        {
+            text.color = new Color(255, 255, 255, 255);
+            text.text = Description;
+            text.GetComponent<TextEffect>().Refresh();
+        }
+        else
+        {
+            text.color = new Color(255, 255, 255, 0);
+            text.text = " ";
+            text.GetComponent<TextEffect>().Refresh();
+        }
     }
 }
