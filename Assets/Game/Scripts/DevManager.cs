@@ -1,9 +1,12 @@
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DevManager : MonoBehaviour
 {
     public GameObject Enemy;
+    public GameObject Mine;
     private void Start()
     {
         #if !UNITY_EDITOR
@@ -29,6 +32,12 @@ public class DevManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             ServiceLocator.GetService<SwapCard>().RerollSwapCards();
+        }
+        if ( Input.GetKeyDown(KeyCode.F))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Instantiate(Mine, mousePos, transform.rotation);
         }
     }
 }

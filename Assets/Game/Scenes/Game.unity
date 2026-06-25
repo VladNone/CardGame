@@ -731,7 +731,6 @@ MonoBehaviour:
   Bullets: []
   MouseLock: 0
   Text: {fileID: 727031012}
-  EventText: 
 --- !u!4 &284064884
 Transform:
   m_ObjectHideFlags: 0
@@ -6142,6 +6141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 5598179855424691278, guid: b8ca12fd3d62a454f8538d2e3a6d70c8, type: 3}
+  Mine: {fileID: 2372171481332218633, guid: 9cb291878e2632e479a2b4196eefeb55, type: 3}
 --- !u!1 &544701821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6487,7 +6487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d65981b9b542704fa5a8288e47e82a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventName: <link=gradient>CARD EXCHANGE</link>
   NewCards: []
   OwnCards: []
   OtherCards:
@@ -8438,6 +8437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6
   Direction: {x: 1, y: 0.3}
+  Hp: 3
 --- !u!50 &1993143543
 Rigidbody2D:
   serializedVersion: 4

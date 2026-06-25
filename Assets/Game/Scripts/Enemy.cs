@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private int damToStun;
     private bool isDead = false;
     private AudioSource source;
+    private IDestroyable spikes;
     private void Awake()
     {
         damToStun = DamageToStun;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
         source = GetComponent<AudioSource>();
         ServiceLocator.GetService<ArenaStats>().AddEnemy(gameObject);
         player = ServiceLocator.GetService<PlayerMovement>();
+        spikes = GetComponent<IDestroyable>();
     }
     private void Update()
     {
@@ -43,6 +45,7 @@ public class Enemy : MonoBehaviour
             stun = true;
             Invoke("StunExit", StunTime);
         }
+        if (spikes != null) spikes.TakeDamage();
         if (Hp <= 0 && !isDead)
         {
             isDead = true;
@@ -58,5 +61,16 @@ public class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         if (ServiceLocator.GetService<CoreGame>() != null) ServiceLocator.GetService<CoreGame>().Invoke("CheckEnemy", 0.1f);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy.stun && enemy.GetComponent<Rigidbody2D>().velocity.magnitude > 1)
+            {
+                TakeDamage(1f);
+            }
+        }
     }
 }

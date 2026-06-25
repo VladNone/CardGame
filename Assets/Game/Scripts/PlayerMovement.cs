@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 1f;
     public Vector2 Direction;
+    public float Hp = 3f;
 
     private Rigidbody2D rb;
     private float Timer = 1;
@@ -33,6 +34,13 @@ public class PlayerMovement : MonoBehaviour
         Timer = 1;
 
         if (game.IsGameplay) deck.AddToHand();
+
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Hp -= 1f;
+            Debug.Log(Hp);
+            if (Hp <= 0f) Destroy(gameObject);
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
