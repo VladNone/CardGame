@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
             stun = true;
             Invoke("StunExit", StunTime);
         }
-        if (spikes != null) spikes.TakeDamage();
+        if (spikes != null) spikes.TakeDamage(damage);
         if (Hp <= 0 && !isDead)
         {
             isDead = true;

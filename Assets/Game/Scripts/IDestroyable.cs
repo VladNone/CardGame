@@ -1,5 +1,5 @@
 ﻿public interface IDestroyable
 {
-    public void TakeDamage();
+    public void TakeDamage(float Damage);
 }
 
