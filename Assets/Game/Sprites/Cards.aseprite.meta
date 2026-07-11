@@ -160,6 +160,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
+  - name: TestCardBG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 4
+      width: 36
+      height: 54
+    spriteID: 666e0d90a36c1344fbbb43735f557b41
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
     guid: -917059685
@@ -173,7 +193,7 @@ ScriptedImporter:
       cellRect:
         x: 17
         y: 15
-        width: 36
+        width: 88
         height: 54
       spriteId: 6f43415dc19c494429148b0f3fc86b1d
     linkedCells: []
@@ -229,4 +249,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 65, y: 84}
+  canvasSize: {x: 170, y: 84}
