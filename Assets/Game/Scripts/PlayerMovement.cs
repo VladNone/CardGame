@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Hp -= 1f;
             Debug.Log(Hp);
-            if (Hp <= 0f) Destroy(gameObject);
+            if (Hp <= 0f) gameObject.SetActive(false);
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
