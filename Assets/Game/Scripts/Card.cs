@@ -32,6 +32,8 @@ public class Card : MonoBehaviour
 
         sprite.material = new Material(sprite.material);
         sprite.material.color = sprite.color;
+
+        transform.position = new Vector3(Random.Range(-10f, 10f), -10f, -3f);
     }
     private void OnMouseDown()
     {

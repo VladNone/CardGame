@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 442780539}
   - component: {fileID: 442780541}
   m_Layer: 0
-  m_Name: Tutorial
+  m_Name: Tutorial(skip)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,6 +1011,7 @@ MonoBehaviour:
   - {fileID: 196649674}
   - {fileID: 317686106}
   MultMusic: 0.5
+  Skip: 1
 --- !u!4 &442780540
 Transform:
   m_ObjectHideFlags: 0
@@ -6939,6 +6940,7 @@ MonoBehaviour:
   - {fileID: 2902789957258545243, guid: a7d56b51835f91d4c9e5a1bf5612d6e5, type: 3}
   - {fileID: 8492380120435254461, guid: 3b19abb0294aa1642a58448771803cf3, type: 3}
   - {fileID: 7610183962642932027, guid: 63ec1ce244b784d48813dd3e1f890a27, type: 3}
+  - {fileID: 4896520991858126611, guid: 882216c49d03209459ff1afe8657e937, type: 3}
   NewCardPlaces:
   - {fileID: 873520476}
   - {fileID: 130119247}
@@ -7309,6 +7311,11 @@ MonoBehaviour:
         m_Calls: []
   - triggerWhen: 0
     effect: {fileID: 11400000, guid: bf4579d2899834487a826a7a0cadd8b1, type: 2}
+    onEffectCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+  - triggerWhen: 0
+    effect: {fileID: 11400000, guid: b35e91f2ba42c4508990bb116bf016ee, type: 2}
     onEffectCompleted:
       m_PersistentCalls:
         m_Calls: []

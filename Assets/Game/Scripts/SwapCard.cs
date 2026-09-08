@@ -45,7 +45,7 @@ public class SwapCard : MonoBehaviour
         for (int i = 0; i < OwnCardPlaces.Length; i++)
         {
             deck.AddToOwnCards();
-            hand.AddCard(OwnCards[i]);
+            if (OwnCards[i] != null) hand.AddCard(OwnCards[i]);
             OwnCards[i].IsBuying = true;
         }
     }

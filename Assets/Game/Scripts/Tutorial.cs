@@ -11,6 +11,7 @@ public class Tutorial : MonoBehaviour
     public List<GameObject> Points;
     public List<GameObject> Puppets;
     public float MultMusic = 1f;
+    public bool Skip = false;
 
     private PlayerMovement player;
     private Deck deck;
@@ -41,6 +42,7 @@ public class Tutorial : MonoBehaviour
         music.Play();
         startMusic = true;
 
+        if (Skip) SkipTutorial();
         Invoke("SecondStep", 4f);
     }
     public void SecondStep()
