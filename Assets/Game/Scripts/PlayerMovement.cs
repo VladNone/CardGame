@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public float Speed = 1f;
     public Vector2 Direction;
     public float Hp = 3f;
+    public bool TakeDamage = false;
 
     private Rigidbody2D rb;
     private float Timer = 1;
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (game.IsGameplay) deck.AddToHand();
 
-        if (collision.collider.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Enemy") && TakeDamage)
         {
             Hp -= 1f;
             Debug.Log(Hp);

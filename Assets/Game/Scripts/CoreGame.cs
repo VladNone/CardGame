@@ -1,4 +1,3 @@
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class CoreGame : MonoBehaviour
@@ -20,7 +19,7 @@ public class CoreGame : MonoBehaviour
         hand = ServiceLocator.GetService<Hand>();
         deck = ServiceLocator.GetService<Deck>();
 
-        Invoke("SwitchGameplay", 1f);
+        //Invoke("SwitchGameplay", 1f);
     }
     public void CheckEnemy()
     {
