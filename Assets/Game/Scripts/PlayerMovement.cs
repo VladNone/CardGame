@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 Direction;
     public float Hp = 3f;
     public bool TakeDamage = false;
+    public MoneyCounter Money;
 
     private Rigidbody2D rb;
     private float Timer = 1;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        Money = GetComponent<MoneyCounter>();
     }
     private void Start()
     {

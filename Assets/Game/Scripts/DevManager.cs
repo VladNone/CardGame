@@ -31,6 +31,7 @@ public class DevManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
+            ServiceLocator.GetService<Hand>().KillAllCards();
             ServiceLocator.GetService<SwapCard>().RerollSwapCards();
         }
         if ( Input.GetKeyDown(KeyCode.F))

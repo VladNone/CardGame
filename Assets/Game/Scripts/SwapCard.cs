@@ -42,7 +42,11 @@ public class SwapCard : MonoBehaviour
             NewCards.Add(card);
         }
 
-        for (int i = 0; i < OwnCardPlaces.Length; i++)
+        int ownCardPlaceCount = OwnCardPlaces.Length;
+
+        if (deck.Cards.Count < OwnCardPlaces.Length) ownCardPlaceCount = deck.Cards.Count;
+
+        for (int i = 0; i < ownCardPlaceCount; i++)
         {
             deck.AddToOwnCards();
             if (OwnCards[i] != null) hand.AddCard(OwnCards[i]);
