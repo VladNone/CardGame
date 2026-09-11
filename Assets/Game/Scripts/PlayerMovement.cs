@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
         Money = GetComponent<MoneyCounter>();
+        Money.textMoney.gameObject.SetActive(true);
     }
     private void Start()
     {

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +5,7 @@ public class DevManager : MonoBehaviour
 {
     public GameObject Enemy;
     public GameObject Mine;
+    public GameObject Money;
     private void Start()
     {
         #if !UNITY_EDITOR
@@ -39,6 +38,21 @@ public class DevManager : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Instantiate(Mine, mousePos, transform.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Instantiate(Money, mousePos, transform.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            for (int i = 0; i < 3; i++)
+            {
+                Instantiate(Money, mousePos, transform.rotation);
+            }
         }
     }
 }

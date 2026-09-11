@@ -6519,6 +6519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 5598179855424691278, guid: b8ca12fd3d62a454f8538d2e3a6d70c8, type: 3}
   Mine: {fileID: 2372171481332218633, guid: 9cb291878e2632e479a2b4196eefeb55, type: 3}
+  Money: {fileID: 557857020719663588, guid: 36399851190dfeb45820808ddc371966, type: 3}
 --- !u!1 &544701821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,6 +6943,7 @@ MonoBehaviour:
   - {fileID: 8492380120435254461, guid: 3b19abb0294aa1642a58448771803cf3, type: 3}
   - {fileID: 7610183962642932027, guid: 63ec1ce244b784d48813dd3e1f890a27, type: 3}
   - {fileID: 4896520991858126611, guid: 882216c49d03209459ff1afe8657e937, type: 3}
+  - {fileID: 553156153282855116, guid: ee171246efa8d7d4abb67905468e0847, type: 3}
   NewCardPlaces:
   - {fileID: 873520476}
   - {fileID: 130119247}
@@ -7903,7 +7905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1077470042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7943,7 +7945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100<sprite=0>
+  m_text: 0<sprite=0>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b73cff4a1d9f43a448e0855024b9828b, type: 2}
   m_sharedMaterial: {fileID: -7841125869818693016, guid: b73cff4a1d9f43a448e0855024b9828b, type: 2}
@@ -10875,6 +10877,7 @@ MonoBehaviour:
   Hp: 1
   StunTime: 2
   particle: {fileID: 8552361529297135490, guid: 29efac2394f05614f871a5545512806c, type: 3}
+  Money: {fileID: 0}
   RotationSpeed: 75
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

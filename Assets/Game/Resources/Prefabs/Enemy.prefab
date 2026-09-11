@@ -950,6 +950,7 @@ MonoBehaviour:
   Hp: 5
   StunTime: 2
   particle: {fileID: 8552361529297135490, guid: 29efac2394f05614f871a5545512806c, type: 3}
+  Money: {fileID: 557857020719663588, guid: 36399851190dfeb45820808ddc371966, type: 3}
 --- !u!114 &2374211946875912188
 MonoBehaviour:
   m_ObjectHideFlags: 0

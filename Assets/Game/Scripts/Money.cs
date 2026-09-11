@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    public Transform Target;
+    public Vector3 Target;
     public float Speed = 10f;
     public float MultBounce = 2f;
     public int MoneyCount = 25;
@@ -10,20 +10,26 @@ public class Money : MonoBehaviour
 
     private float timePast = 0f;
 
+    private void Awake()
+    {
+        TimeSleep = Random.Range(0.5f, 1f);
+        Target = Camera.main.ScreenToWorldPoint(ServiceLocator.GetService<PlayerMovement>().Money.textMoney.gameObject.transform.position);
+        Target.z = 0f;
+
+        MoveableSmoothDamp move = gameObject.AddComponent<MoveableSmoothDamp>();
+        move.targetPosition = new Vector2
+            (
+                transform.position.x + Random.Range(-MultBounce, MultBounce), transform.position.y + Random.Range(-MultBounce, MultBounce)
+            );
+    }
     private void Update()
     {
         timePast += Time.deltaTime;
         if (timePast < TimeSleep) return;
+        GetComponent<MoveableSmoothDamp>().targetPosition = Target;
 
-
-        transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
-
-        if (transform.position == Target.position)
+        if (transform.position == Target)
         {
-            Target.position = new Vector2
-                (
-                    transform.position.x + Random.Range(-MultBounce, MultBounce), transform.position.y + Random.Range(-MultBounce, MultBounce)
-                );
             ScaleKill kill = gameObject.AddComponent<ScaleKill>();
             kill.Speed = 5f;
             kill.IsScaleKill = true;

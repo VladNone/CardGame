@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float Hp = 1f;
     public float StunTime = 1f;
     public GameObject particle;
+    public GameObject Money;
 
     protected PlayerMovement player;
     protected Rigidbody2D rb;
@@ -50,6 +51,14 @@ public class Enemy : MonoBehaviour
         {
             isDead = true;
             Instantiate(particle, transform.position, transform.rotation);
+            if (Money != null)
+            {
+                for (int i = 0; i < Random.Range(3, 5); i++)
+                {
+                    Money money = Instantiate(Money, transform.position, transform.rotation).GetComponent<Money>();
+                    money.MoneyCount = Random.Range(10, 55);
+                }
+            }
             Destroy(gameObject);
         }
     }
